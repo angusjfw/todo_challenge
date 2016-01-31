@@ -3,7 +3,7 @@ describe('todoListController', function() {
 
   var ctrl;
   beforeEach(inject(function($controller) {
-    ctrl = $controller('GitUserSearchController');
+    ctrl = $controller('todoListController');
   }));
 
   it('intialises with an empty taks array and undefined newTask', function() {
