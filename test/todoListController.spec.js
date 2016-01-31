@@ -6,8 +6,8 @@ describe('TodoListController', function() {
     ctrl = $controller('TodoListController');
   }));
 
-  it('intialises with an empty taks array and undefined newTask', function() {
-    expect(ctrl.tasks).toBeUndefined();
+  it('intialises with an empty tasks array and undefined newTask', function() {
+    expect(ctrl.tasks).toEqual([]);
     expect(ctrl.newTask).toBeUndefined();
   });
 });
