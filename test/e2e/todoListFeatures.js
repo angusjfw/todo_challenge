@@ -19,5 +19,6 @@ describe('TodoList', function() {
     newTaskEntry.sendKeys('collect dry cleaning');
     addTaskButton.click();
     expect(tasks.first().getText()).toEqual('collect dry cleaning');
+    expect(newTaskEntry.getText()).toEqual('');
   });
 });
