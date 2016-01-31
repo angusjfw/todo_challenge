@@ -1,9 +1,9 @@
-describe('todoListController', function() {
-  beforeEach(module('todoList'));
+describe('TodoListController', function() {
+  beforeEach(module('TodoList'));
 
   var ctrl;
   beforeEach(inject(function($controller) {
-    ctrl = $controller('todoListController');
+    ctrl = $controller('TodoListController');
   }));
 
   it('intialises with an empty taks array and undefined newTask', function() {

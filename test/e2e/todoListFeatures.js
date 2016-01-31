@@ -1,4 +1,4 @@
-describe('todoList', function() {
+describe('TodoList', function() {
   beforeEach(function() {
     browser.get('http://localhost:5000');
   });
