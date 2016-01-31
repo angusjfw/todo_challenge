@@ -13,15 +13,23 @@
     <script src="src/todoListController.js"></script>
   </head>
 
-  <body>
+  <body ng-controller="TodoListController as todoCtrl">
     <div class="container">
 
       <div class="page-header row">
         <h1>to do:</h1>
       </div>
 
-      <div ng-controller="TodoListController as todoCtrl">
-      </div>
+      <form class="form-horizontal">
+        <input type="text" name="new-task" ng-model="todoCtrl.newTask" />
+        <button class="btn-success" ng-click="todoCtrl.addTask()">Add Task</button>
+      </form>
+
+      <ul class="list-group">
+        <li ng-repeat="task in taskCtrl.tasks">
+          {{task.name}}
+        </li>
+      </ul>
 
     </div>
   </body>

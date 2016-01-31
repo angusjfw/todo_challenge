@@ -1,4 +1,7 @@
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['todoListFeatures.js']
+  specs: ['todoListFeatures.js'],
+  capabilities: {
+    browserName: 'chrome'
+  }
 }
