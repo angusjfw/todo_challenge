@@ -1,6 +1,6 @@
 describe('todoList', function() {
   beforeEach(function() {
-    browser.get('http://localhost:8080');
+    browser.get('http://localhost:5000');
   });
 
   it('has a title tag and page header text', function() {
