@@ -7,4 +7,11 @@ describe('todoList', function() {
     expect(browser.getTitle()).toEqual('To-Do List');
     expect(element(by.className('page-header')).getText()).toEqual('to do:');
   });
+
+  it('stores and displays new tasks entered by the user', function() {
+    element(by.model("newTask")).sendKeys("collect dry cleaning");
+    element(by.id("addTask")).click();
+    expect(element.all(by.binding("task")).first())
+      .toEqual("collect dry cleaning");
+  });
 });
