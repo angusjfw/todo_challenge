@@ -1,0 +1,24 @@
+{
+  "name": "todo_challenge",
+  "homepage": "https://github.com/angusjfw/todo_challenge",
+  "authors": [
+    "hibreez <4ngus.whitehead@gmail.com>"
+  ],
+  "description": "todo app in angularjs",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "bootstrap": "^3.3.6",
+    "angular": "^1.4.9",
+    "angular-resource": "^1.4.9"
+  }
+}
