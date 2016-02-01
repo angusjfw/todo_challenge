@@ -4,7 +4,10 @@ todoList.controller('TodoListController', [function() {
   self.tasks = [];
 
   self.addTask = function() {
-    self.tasks.push({ name: self.newTask })
+    self.tasks.push({
+      name: self.newTask,
+      done: false
+    })
     self.newTask = '';
   }
 }]);

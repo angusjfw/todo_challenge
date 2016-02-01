@@ -17,8 +17,9 @@ describe('TodoListController', function() {
       ctrl.addTask();
     });
 
-    it('adds object to tasks array with name property', function() {
+    it('adds a new task object to tasks array', function() {
       expect(ctrl.tasks[0].name).toEqual('a new task');
+      expect(ctrl.tasks[0].done).toEqual(false);
     });
 
     it('clears the newTask field', function() {
