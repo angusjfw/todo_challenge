@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>To-Do List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="todoList.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -27,7 +28,8 @@
 
       <ul class="list-group">
         <li ng-repeat="task in todoCtrl.tasks">
-          {{task.name}}
+          <input type="checkbox" ng-model="task.done" />
+          <span class="done-{{task.done}}">{{task.name}}</span>
         </li>
       </ul>
 
