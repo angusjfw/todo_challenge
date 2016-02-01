@@ -6,7 +6,8 @@
     <title>To-Do List</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="todoList.css">
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
 
@@ -32,6 +33,21 @@
           <span class="done-{{task.done}}">{{task.name}}</span>
         </li>
       </ul>
+
+      <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-primary active">
+          <input type="radio" id="filter-all" ng-model="todoCtrl.filter"
+          ng-value="all" ng-change="updateFilter" checked /> All
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" id="filter-active" ng-model="todoCtrl.filter"
+          ng-value="active" ng-change="updateFilter" /> Active
+        </label>
+        <label class="btn btn-primary">
+          <input type="radio" id="filter-completed" ng-model="todoCtrl.filter"
+          ng-value="completed" ng-change="updateFilter" /> Completed
+        </label>
+      </div>
 
     </div>
   </body>
