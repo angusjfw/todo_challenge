@@ -6,14 +6,16 @@ describe('TodoListController', function() {
     ctrl = $controller('TodoListController');
   }));
 
-  it('intialises with an empty tasks array and undefined newTask', function() {
+  it('intialise empty task arrays, no filter, undefined newTask', function() {
     expect(ctrl.tasks).toEqual([]);
+    expect(ctrl.filteredTasks).toEqual([]);
+    expect(ctrl.currentFilter).toEqual('all');
     expect(ctrl.newTask).toBeUndefined();
   });
 
   describe('#addTask', function() {
     beforeEach( function() {
-      spyOn(ctrl, 'updateFilter');
+      spyOn(ctrl, 'applyFilter');
       ctrl.newTask = 'a new task';
       ctrl.addTask();
     });
@@ -28,22 +30,18 @@ describe('TodoListController', function() {
     });
 
     it('calls function to update filtered tasks', function() {
-      expect(ctrl.updateFilter).toHaveBeenCalled();
+      expect(ctrl.applyFilter).toHaveBeenCalled();
     });
   });
 
-  describe('#updateFilter', function() {
-    beforeAll(function() {
+  describe('#applyFilter', function() {
+    it('selects tasks by filter and updates filteredTasks array', function() {
       ctrl.tasks = [
         { name: 'incomplete task', done: false },
         { name: 'complete task', done: true },
         { name: 'latest task', done: false }
       ]
-    });
-
-    it('selects tasks by filter and updates filteredTasks array', function() {
-      ctrl.filter = 'active';
-      ctrl.updateFilter();
+      ctrl.applyFilter('active');
       expect(ctrl.filteredTasks.length).toEqual(2);
     });
   });

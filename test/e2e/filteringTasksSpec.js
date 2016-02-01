@@ -7,7 +7,7 @@ describe('TodoList', function() {
   beforeAll(function() {
     browser.get('http://localhost:5000');
     newTaskEntry = element(by.model('todoCtrl.newTask'));
-    tasks = element.all(by.repeater('task in todoCtrl.tasks'));
+    tasks = element.all(by.repeater('task in todoCtrl.filteredTasks'));
     allTasksButton = element(by.id('filter-all')).element(by.xpath('..'));
     activeTasksButton = element(by.id('filter-active')).element(by.xpath('..'));
     completedTasksButton = element(by.id('filter-completed')).element(by.xpath('..'));

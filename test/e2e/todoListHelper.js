@@ -29,7 +29,7 @@ function getTextClass(taskNumber) {
 }
 
 function getTaskCount() {
-  return element.all(by.repeater('task in todoCtrl.tasks'))
+  return element.all(by.repeater('task in todoCtrl.filteredTasks'))
     .then(function(elements) {
       return elements.length;
     });

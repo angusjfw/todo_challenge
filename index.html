@@ -24,28 +24,30 @@
 
       <form class="form-horizontal">
         <input type="text" name="new-task" ng-model="todoCtrl.newTask" />
-        <button class="btn-success" ng-click="todoCtrl.addTask()">Add Task</button>
+        <button class="btn-success" ng-click="todoCtrl.addTask()">
+          Add Task
+        </button>
       </form>
 
       <ul class="list-group">
-        <li ng-repeat="task in todoCtrl.tasks">
+        <li ng-repeat="task in todoCtrl.filteredTasks">
           <input type="checkbox" ng-model="task.done" />
           <span class="done-{{task.done}}">{{task.name}}</span>
         </li>
       </ul>
 
       <div class="btn-group" data-toggle="buttons">
-        <label class="btn btn-primary active">
-          <input type="radio" id="filter-all" ng-model="todoCtrl.filter"
-          ng-value="all" ng-change="updateFilter" checked /> All
+        <label class="btn btn-primary active"
+          ng-click="todoCtrl.applyFilter('all')">
+          <input type="radio" id="filter-all" checked /> All
         </label>
-        <label class="btn btn-primary">
-          <input type="radio" id="filter-active" ng-model="todoCtrl.filter"
-          ng-value="active" ng-change="updateFilter" /> Active
+        <label class="btn btn-primary"
+          ng-click="todoCtrl.applyFilter('active')">
+          <input type="radio" id="filter-active" /> Active
         </label>
-        <label class="btn btn-primary">
-          <input type="radio" id="filter-completed" ng-model="todoCtrl.filter"
-          ng-value="completed" ng-change="updateFilter" /> Completed
+        <label class="btn btn-primary"
+          ng-click="todoCtrl.applyFilter('complete')">
+          <input type="radio" id="filter-completed" /> Completed
         </label>
       </div>
 

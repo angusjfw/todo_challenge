@@ -9,7 +9,7 @@ describe('TodoList', function() {
     pageHeader = element(by.className('page-header')).getText();
     newTaskEntry = element(by.model('todoCtrl.newTask'));
     addTaskButton = element(by.buttonText('Add Task'));
-    tasks = element.all(by.repeater('task in todoCtrl.tasks'));
+    tasks = element.all(by.repeater('task in todoCtrl.filteredTasks'));
   });
 
   it('has a title tag and page header text', function() {
