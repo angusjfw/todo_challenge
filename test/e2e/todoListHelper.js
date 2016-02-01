@@ -28,9 +28,17 @@ function getTextClass(taskNumber) {
     });
 }
 
+function getTaskCount() {
+  return element.all(by.repeater('task in todoCtrl.tasks'))
+    .then(function(elements) {
+      return elements.length;
+    });
+}
+
 module.exports = {
   getInputValue: getInputValue,
   isComplete: isComplete,
   completeTask: completeTask,
-  getTextClass: getTextClass
+  getTextClass: getTextClass,
+  getTaskCount: getTaskCount
 }
